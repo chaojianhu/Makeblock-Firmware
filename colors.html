@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>show colors</title>
+	</head>
+	<body>
+		<div id="morediv"></div>
+		<script>
+			var hex = new Array('00', '33', '66', '99', 'CC', 'FF');
+			var colors = '<table border="1" width="100%">';
+			for (var i = 0; i < 6; i++) {
+				for (var j = 0; j < 3; j++) {
+					colors = colors + '<tr>';
+					for (var k = 0; k < 6; k++) {
+						colors = colors + '<td align="center" style="color:#ffffff" bgcolor="#' + hex[i] + hex[j] + hex[k] + '">' + hex[i] + hex[j] + hex[k] + '</td>';
+					}
+					colors = colors  + '</tr>';
+				}
+				for (var j = 3; j < 6; j++) {
+					colors = colors + '<tr>';
+					for (var k = 0; k < 6; k++) {
+						colors = colors + '<td align="center" bgcolor="#' + hex[i] + hex[j] + hex[k] + '">' + hex[i] + hex[j] + hex[k] + '</td>';
+					}
+					colors = colors  + '</tr>';
+				}
+			}
+			colors = colors + '</table>';
+			document.getElementById('morediv').innerHTML = colors;
+		</script>
+	</body>
+</html>
